@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="portfolioApp" ng-strict-di class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Antonio's Portfolio</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+  <nav class="navigation">
+    <div class="name" ><h1>Antonio Parayno</h1></div>
+      <div class="nav">
+      <ul>
+        <li><a href="#!/home">Home</a></li>
+        <li><a href="#!/projects">Projects</a></li>
+      </ul>
+      </div>
+  </nav>
+
+  <div ng-view></div>
+
+  <footer>
+    <ul>
+      <li><a href = "https://www.linkedin.com/in/antonio-parayno-04a50997/">Resume</a></li>
+      <li><a href = "https://github.com/antonParayno">Github</a></li>
+    </ul>
+  </footer>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+  <script src="home/home.js"></script>
+  <script src="projects-list/projects-list.module.js"></script>
+  <script src="projects-list/projects-list.config.js"></script>
+  <script src="projects-list/projects-list.component.js"></script>
+  <script src="projects/todoList/todoList.module.js"></script>
+  <script src="projects/todoList/todoList.component.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

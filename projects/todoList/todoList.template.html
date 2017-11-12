@@ -1,0 +1,74 @@
+
+<h1>Todos</h1>
+<div>
+    <input type="checkbox" ng-model="checked" ng-click="$ctrl.toggleAll(checked)" ><input ng-model="$ctrl.todo.todo" ng-keyup="$event.keyCode === 13 ? $ctrl.addTodo() : null" type="text" placeholder="add todo here" autofocus/>
+</div>
+
+<section>
+	<ul>
+		<li ng-class="{ active: $ctrl.tabIsSet(1) }">
+			<a href="" ng-click="$ctrl.setTab(1)">All</a>
+		</li>
+		<li ng-class="{ active: $ctrl.tabIsSet(2) }">
+			<a href="" ng-click="$ctrl.setTab(2)">Active</a>
+		</li>
+		<li ng-class="{ active: $ctrl.tabIsSet(3) }">
+			<a href="" ng-click="$ctrl.setTab(3)">Completed</a>
+		</li>
+	</ul>
+	<div ng-show="$ctrl.tabIsSet(1)">
+		<ul>
+			<li ng-repeat="todo in $ctrl.todoList" ng-dblclick="hideDiv=!hideDiv" ng-init="hideDiv=false">
+				<div ng-hide="hideDiv">
+					<input type="checkbox" ng-click="$ctrl.toggleTodo(todo)" ng-checked="todo.completed"/>
+					<label>{{todo.todo}}</label>
+					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
+				</div>
+				<div ng-show="hideDiv" >
+				  <input name="todoEdit" ng-model="todoText" ng-keydown="$event.keyCode === 13 ? $ctrl.editTodo(todo, todoText, $event) : null" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div ng-show="$ctrl.tabIsSet(2)">
+		<ul>
+			<li ng-repeat="todo in $ctrl.todoList | filter: {completed : false}" ng-dblclick="hideDiv=!hideDiv" ng-init="hideDiv=false">
+				<div ng-hide="hideDiv">
+					<input type="checkbox" ng-click="$ctrl.toggleTodo(todo)" ng-checked="todo.completed"/>
+					<label>{{todo.todo}}</label>
+					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
+				</div>
+				<div ng-show="hideDiv" >
+				  <input name="todoEdit" ng-model="todoText" ng-keydown="$event.keyCode === 13 ? $ctrl.editTodo(todo, todoText, $event) : null" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div ng-show="$ctrl.tabIsSet(3)">
+		<ul>
+			<li ng-repeat="todo in $ctrl.todoList | filter: {completed : true}" ng-dblclick="hideDiv=!hideDiv" ng-init="hideDiv=false">
+				<div ng-hide="hideDiv">
+					<input type="checkbox" ng-click="$ctrl.toggleTodo(todo)" ng-checked="todo.completed"/>
+					<label>{{todo.todo}}</label>
+					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
+				</div>
+				<div ng-show="hideDiv" >
+				  <input name="todoEdit" ng-model="todoText" ng-keydown="$event.keyCode === 13 ? $ctrl.editTodo(todo, todoText, $event) : null" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div ng-show="$ctrl.todoList.length >= 1">
+	  <input type="button" value="Clear Completed" ng-click="$ctrl.clearCompleted()" />
+	</div>
+
+</section>
+
+
+
+<!-- <ul>
+	<li ng-repeat="todo in $ctrl.todoList">
+		<div><input type="checkbox" ng-click="$ctrl.toggleTodo(todo)" /><label>{{todo.todo}}</label></div>
+	<li>
+<ul>
+ -->
