@@ -27,23 +27,17 @@ angular.
 
           // storage for the todos
     	  self.todoList = [];
+          // this will keep the value of the input field blank
+          self.todo = '';
 
-          // the object for the todo
-
-    	  self.todo = {
-    	  	id : self.uuid(),
-    	  	todo : "",
-    	  	completed : false
-    	  }
-
-    	  self.addTodo = function () { 
-    	  	if(self.todo.todo) {
-    	  	  self.todoList.push(self.todo);
-    	  	  self.todo = {
-    	  	   	id : self.uuid(),
-    	  		todo : "",
-    	  		completed : false
-    	  	  }
+    	  self.addTodo = function (todo) { 
+            if(todo) {
+    	  	  self.todoList.push({
+                id : self.uuid(),
+                todo : todo,
+                completed : false
+              });
+              self.todo = ''
     	  	};
     	  }
 
