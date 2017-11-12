@@ -2,7 +2,6 @@
   {
     "id" : "todoList",
     "name" : "Todo List",
-    "snippet" : "A simple todo list project written in javascript. This app can add, edit, and delete todos that will be displayed automatically on the web page.
-    			I just have to add css style to it to make it more visually appealing but the i think the logic for the app is quite solid."
+    "snippet" : "A simple todo list project written in javascript. This app can add, edit, and delete todos that will be displayed automatically on the web page. I just have to add css style to it to make it more visually appealing but the i think the logic for the app is quite solid."
   }
 ]
