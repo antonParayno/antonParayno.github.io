@@ -24,8 +24,8 @@
 					<label>{{todo.todo}}</label>
 					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
-				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)">
-				  <input ng-model="todoText" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
+				  <input ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
@@ -38,8 +38,8 @@
 					<label>{{todo.todo}}</label>
 					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
-				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)">
-				  <input ng-model="todoText" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
+				  <input ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
@@ -52,8 +52,8 @@
 					<label>{{todo.todo}}</label>
 					<input type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
-				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)">
-				  <input ng-model="todoText" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
+				  <input ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
@@ -63,3 +63,12 @@
 	</div>
 
 </section>
+
+
+
+<!-- <ul>
+	<li ng-repeat="todo in $ctrl.todoList">
+		<div><input type="checkbox" ng-click="$ctrl.toggleTodo(todo)" /><label>{{todo.todo}}</label></div>
+	<li>
+<ul>
+ -->
