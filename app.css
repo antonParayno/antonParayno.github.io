@@ -6,13 +6,16 @@ body {
 }
 
 .name {
-	margin: 1px 1px;
+	margin: 0;
+	padding: 60px 0 0;
+	border: 0;
 	text-align: center;
-
+	font: inherit;
+	font-size: 1.5rem;
 }
 
 .nav {
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #ebebeb;
 	margin: 1px 1px;
 }
 
@@ -23,12 +26,31 @@ li {
 
 footer {
 	margin: 1px 1px;
-	border-top: 1px solid gray;
+	border-top: 1px solid #ebebeb;
 }
 
 a {
 	text-decoration: none;
 	color: black;
+}
+
+/*Home page*/
+
+.home {
+	margin: 0 auto;
+	padding: 0;
+}
+
+.home h2 {
+	font: serif;
+	font-weight: 100;
+	padding-left: 50px; 
+}
+
+.home p {
+	margin: 0 auto;
+	padding: 0 50px;
+
 }
 
 /*Todo List Style*/
@@ -124,10 +146,11 @@ input[type="checkbox"] {
 	position: absolute;
 	top: 10px;
 	height: 34px;
-	width: 30px;
+	width: 34px;
 	text-align: center;
 	border: none;
 	outline: none;
+	background: none;
 	z-index: 2;
 	-moz-appearance:none;
 	-webkit-appearance:none;
@@ -177,6 +200,7 @@ input[type="checkbox"] {
 	border: none;
 	outline: none;
 	margin-left: 10px;
+	background: none;
 	-moz-appearance:none;
 	-webkit-appearance:none;
 	-o-appearance:none;
@@ -242,7 +266,8 @@ input[type="checkbox"] {
 	display: block;
 }
 
-.todolist li .edit {
+.todolist li .edit{
+	display: block;
 	position: relative;
 	margin: 1.5px 1.5px;
 	width: 91%;

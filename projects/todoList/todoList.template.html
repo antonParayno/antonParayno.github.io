@@ -3,7 +3,8 @@
 <div class="todoApp">	
 <h1 id="todoTitle">Todo List</h1>
 <form ng-submit="$ctrl.addTodo($ctrl.todo)">
-    <input id="toggleAll" type="checkbox" ng-model="checked" ng-click="$ctrl.toggleAll(checked)" ><input id="todoInput" ng-model="$ctrl.todo" type="text" placeholder="What are your todos today?" autofocus/>
+    <input id="toggleAll" type="checkbox" ng-model="checked" ng-click="$ctrl.toggleAll(checked)" ><input id="todoInput" ng-model="$ctrl.todo" type="text" placeholder="What are your todos today?"
+     autofocus/>
 </form>
 
 <section>
@@ -27,7 +28,7 @@
 					<input class="destroy" type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
 				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
-				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv=false" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
@@ -41,7 +42,7 @@
 					<input class="destroy" type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
 				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
-				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv=false" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
@@ -55,7 +56,7 @@
 					<button class="destroy" ng-click="$ctrl.deleteTodo(todo, todo.id)">X</button>
 				</div>
 				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
-				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv" type="text" placeholder="{{todo.todo}}"/>
+				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv=false" type="text" placeholder="{{todo.todo}}"/>
 				</form>
 			</li>
 		</ul>
