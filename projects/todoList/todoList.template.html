@@ -52,8 +52,8 @@
 			<li ng-repeat="todo in $ctrl.todoList | filter: {completed : true}">
 				<div class="view" ng-hide="hideDiv">
 					<input class="toggle" type="checkbox" ng-click="$ctrl.toggleTodo(todo)" ng-checked="todo.completed"/>
-					<label ng-dblclick="hideDiv=!hideDiv" ng-init="hideDiv=false">{{todo.todo}}</label>
-					<button class="destroy" ng-click="$ctrl.deleteTodo(todo, todo.id)">X</button>
+					<label ng-dblclick="hideDiv=!hideDiv" ng-class="{completed : todo.completed}" ng-init="hideDiv=false">{{todo.todo}}</label>
+					<input class="destroy" type="button" value="x" ng-click="$ctrl.deleteTodo(todo, todo.id)"/>
 				</div>
 				<form ng-show="hideDiv" ng-submit="$ctrl.editTodo(todo, todoText)" >
 				  <input class="edit" ng-model="todoText" todo-focus="hideDiv" ng-keyup="$event.keyCode === 13 ? hideDiv=!hideDiv : null" ng-blur="hideDiv=false" type="text" placeholder="{{todo.todo}}"/>

@@ -11,5 +11,9 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       }).
       when('/projects/todoList', {
         	template : '<todo-list></todo-list>'
-      }).otherwise('/home');
+      }).
+      when('/projects/reviewer', {
+      		template : '<engg-review></engg-review>'
+      }).
+      otherwise('/home');
 }]);

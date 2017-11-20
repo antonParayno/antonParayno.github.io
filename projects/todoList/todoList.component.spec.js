@@ -21,8 +21,8 @@ describe('TodoListController', function() {
   	it('should properly save a todo', function() {
   	  var todo;
 
-  	  ctrl.todo.todo = 'another test';
-  	  ctrl.addTodo();
+  	  ctrl.todo = 'another test';
+  	  ctrl.addTodo(ctrl.todo);
   	  todo = ctrl.todoList[0];
 
   	  expect(ctrl.todoList.length).toBe(1);
@@ -33,8 +33,8 @@ describe('TodoListController', function() {
   	it('should toggle completed', function() {
   	  var todo;
 
-  	  ctrl.todo.todo = 'another test';
-  	  ctrl.addTodo();
+  	  ctrl.todo = 'another test';
+  	  ctrl.addTodo(ctrl.todo);
   	  todo = ctrl.todoList[0];
 
   	  expect(todo.completed).toBe(false);

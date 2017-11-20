@@ -3,5 +3,10 @@
     "id" : "todoList",
     "name" : "Todo List",
     "snippet" : "A simple todo list project written in javascript using AngularJS. This app can add, edit, and delete todos that will be displayed automatically on the web page. The app will not save the data when refreshed. The app is working but it needs more work on some UI glitches. I will update soon for a more solid UI experience."
+  },
+  {
+  	"id" : "reviewer",
+  	"name" : "Reviewer",
+  	"snippet" : "A simple Question and Answer Bank that helps in reviewing for some Engineering Subjects."
   }
 ]
